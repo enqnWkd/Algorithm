@@ -5,14 +5,10 @@ class Solution {
         int num2 = 0;
         
         for (int i=0; i<goal.length; i++) {
-            if (num1 < cards1.length && goal[i].equals(cards1[num1])) {
+            if (num1 < cards1.length && goal[i].equals(cards1[num1]))
                 num1++;
-                continue;
-            }
-            else if (num2 < cards2.length && goal[i].equals(cards2[num2])) {
+            else if (num2 < cards2.length && goal[i].equals(cards2[num2]))
                 num2++;
-                continue;
-            }
             else answer = "No";
             
         }
