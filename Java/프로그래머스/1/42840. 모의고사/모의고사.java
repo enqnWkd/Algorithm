@@ -15,24 +15,14 @@ class Solution {
             if (answers[i] == po3[i%po3.length]) cnt3++;
         }
         
-        System.out.println(cnt1);
-        System.out.println(cnt2);
-        System.out.println(cnt3);
-        
         if (cnt1 == cnt2 && cnt2 == cnt3) {
             list.add(1);
             list.add(2);
             list.add(3);
         }
-        else if (cnt1 > cnt2 && cnt1 > cnt3) {
-            list.add(1);
-        }
-        else if (cnt1 < cnt2 && cnt2 > cnt3) {
-            list.add(2);
-        }
-        else if (cnt1 < cnt3 && cnt2 < cnt3) {
-            list.add(3);
-        }
+        else if (cnt1 > cnt2 && cnt1 > cnt3) list.add(1);
+        else if (cnt1 < cnt2 && cnt2 > cnt3) list.add(2);
+        else if (cnt1 < cnt3 && cnt2 < cnt3) list.add(3);
         else if (cnt1 == cnt2) {
             list.add(1);
             list.add(2);
