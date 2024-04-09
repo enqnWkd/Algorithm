@@ -20,15 +20,6 @@ class Solution {
         List<Integer> keySet = new ArrayList<>(map.keySet());
         Collections.sort(keySet, (v1, v2) -> (map.get(v2).compareTo(map.get(v1))));
         
-        for (int k : keySet)
-            System.out.println(map.get(k));
         return keySet;
     }
-    
-//     public static void main(String[] args) {
-//         Solution sol = new Solution();
-//         int n = 5;
-//         int[] stages = {1,1,1,2,3,4};
-//         sol.solution(n, stages);
-//     }
 }
