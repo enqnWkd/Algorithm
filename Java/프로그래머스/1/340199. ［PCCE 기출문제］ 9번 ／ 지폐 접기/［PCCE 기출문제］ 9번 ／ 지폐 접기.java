@@ -1,20 +1,24 @@
-import java.util.Arrays;
+import java.util.*;
 
 class Solution {
     public int solution(int[] wallet, int[] bill) {
         int answer = 0;
         
-        //먼저 오름차순으로 정렬해줌
-        Arrays.sort(wallet);
-        Arrays.sort(bill);
-        
-        while(bill[0] > wallet[0] || bill[1] > wallet[1]) {
-            bill[1] /= 2;
+        while(min(bill) > min(wallet) || max(bill) > max(wallet)) {
+            //
+            bill[bill[0] > bill[1] ? 0 : 1] /= 2;
+            //
             answer++;
-            Arrays.sort(wallet);
-            Arrays.sort(bill);
         }
         
         return answer;
+    }
+    
+    private int min(int[] arr) {
+        return Math.min(arr[0], arr[1]);
+    }
+    
+    private int max(int[] arr) {
+        return Math.max(arr[0], arr[1]);
     }
 }
