@@ -19,8 +19,8 @@ public class Main {
 			String answer = bf.readLine();
 			
 			if (answer.startsWith("push")==true) {
-				String intStr = answer.replaceAll("[^0-9]", "");
-				stack.push(Integer.parseInt(intStr));
+				String[] intStr = answer.split(" ");
+				stack.push(Integer.parseInt(intStr[1]));
 			}
 			
 			else if (answer.equals("pop")) {
@@ -35,7 +35,7 @@ public class Main {
 				bw.write(String.valueOf(stack.size())+"\n");
 			}
 			else if (answer.equals("empty")) {
-				if (stack.empty())
+				if (stack.isEmpty())
 					bw.write("1\n");
 				else {
 					bw.write("0\n");
