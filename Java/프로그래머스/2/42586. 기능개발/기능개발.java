@@ -1,8 +1,9 @@
 import java.util.*;
 
 class Solution {
-        public ArrayList<Integer> solution(int[] progresses, int[] speeds) {
-        ArrayList<Integer> answer = new ArrayList<>();
+        public int[] solution(int[] progresses, int[] speeds) {
+            
+        ArrayList<Integer> list = new ArrayList<>();
         Queue<Integer> q = new LinkedList<>();
 
         for (int i=0; i<progresses.length; i++) {
@@ -20,16 +21,17 @@ class Solution {
             }
             else {
                 first = num;
-                answer.add(cnt);
+                list.add(cnt);
                 cnt = 1;
             }
         }
-        answer.add(cnt);
+        list.add(cnt);
 
-        for (int i : answer) {
-            System.out.println("** " + i);
+        int[] answer = new int[list.size()];
+        for (int i=0; i<list.size(); i++) {
+            answer[i] = list.get(i);
         }
-
+            
         return answer;
     }
 }
