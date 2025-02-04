@@ -17,14 +17,13 @@ public class Main {
         for (int i=1; i<=n; i++) {
             nums[n-i] = Integer.parseInt(br.readLine());
         }
-        while (k != 0) {
-            for (int i = 0; i < n; i++) {
-                if (nums[i] <= k) {
-                    answer += k / nums[i];
-                    k -= (k / nums[i]) * nums[i];
-                }
-            }
+
+        for (int i : nums) {
+            if (k == 0) break;
+            answer += k / i;
+            k %= i;
         }
+
         System.out.println(answer);
     }
 
